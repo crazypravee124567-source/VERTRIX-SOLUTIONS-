@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vertrix Solutions | Digital Agency &amp; Product Engineering</title>
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Inter & Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+
+    <!-- Tailwind CDN with plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "white": "#450C17",
+              "background": "#F7F3EB",
+              "canvas": "#EFE8DC",
+              "surface": "#FCFAF6",
+              "surface-elevated": "#F2EBE0",
+              "surface-subtle": "#F8F4EC",
+              "border-ui": "#DFD3C0",
+              "border-wine": "#6E1528",
+              "text-primary": "#450C17",
+              "text-secondary": "#7A2838",
+              "text-muted": "#9C4E5E",
+              "accent": "#6E1528",
+              "accent-hover": "#851D33",
+              "accent-text": "#FCFAF6",
+              "success": "#15803D",
+              "error": "#B91C1C",
+              
+              /* Dedicated Wine Red & Light Sand tokens */
+              "wine": "#6E1528",
+              "wine-deep": "#450C17",
+              "wine-surface": "#F6EAEF",
+              "wine-border": "#C498A3",
+              "wine-light": "#8A2037",
+              "sand": "#F7F3EB",
+              "sand-light": "#FCFAF6",
+              "sand-dark": "#DFD3C0",
+              
+              /* Compatibility aliases */
+              "surface-container-lowest": "#FFFFFF",
+              "surface-container-low": "#FCFAF6",
+              "surface-container": "#F7F3EB",
+              "surface-container-high": "#EFE8DC",
+              "surface-container-highest": "#E5DCCE",
+              "on-surface": "#450C17",
+              "on-surface-variant": "#7A2838",
+              "primary-container": "#6E1528",
+              "primary": "#6E1528",
+              "secondary": "#7A2838",
+              "tertiary": "#8A2037",
+              "outline-variant": "#DFD3C0"
+            },
+            borderRadius: {
+              "DEFAULT": "8px",
+              "sm": "4px",
+              "md": "8px",
+              "lg": "8px",
+              "xl": "16px",
+              "2xl": "16px",
+              "3xl": "24px",
+              "full": "9999px"
+            },
+            spacing: {
+              "1": "4px",
+              "2": "8px",
+              "3": "12px",
+              "4": "16px",
+              "6": "24px",
+              "8": "32px",
+              "12": "48px",
+              "16": "64px",
+              "24": "96px",
+              "32": "128px"
+            },
+            fontFamily: {
+              "headline": ["'Plus Jakarta Sans'", "sans-serif"],
+              "body": ["'Plus Jakarta Sans'", "'Inter'", "sans-serif"],
+              "mono": ["'Space Grotesk'", "monospace"],
+              "sans": ["'Plus Jakarta Sans'", "'Inter'", "sans-serif"]
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      @layer base {
+        html, body {
+          margin: 0;
+          padding: 0;
+          background-color: #F7F3EB;
+          color: #450C17;
+          font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+          scroll-behavior: smooth;
+        }
+        ::-webkit-scrollbar {
+          width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+          background: #EFE8DC;
+        }
+        ::-webkit-scrollbar-thumb {
+          background: #DFD3C0;
+          border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+          background: #6E1528;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-background text-text-primary antialiased selection:bg-accent selection:text-accent-text font-body">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
