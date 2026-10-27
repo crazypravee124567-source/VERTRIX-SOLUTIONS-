@@ -122,12 +122,14 @@ export default function Navbar() {
           onClick={(e) => handleNavClick(e, 'home')}
           className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-accent rounded-xl p-1"
         >
-          <div className="w-9 h-9 rounded-xl bg-accent text-accent-text border border-accent/20 flex items-center justify-center font-headline font-extrabold text-base shadow-[0_4px_12px_rgba(110,21,40,0.2)] group-hover:bg-accent-hover transition-colors">
-            V
-          </div>
+          <img 
+            src="/logo-icon.png" 
+            alt="VetriX Solutions Logo" 
+            className="w-9 h-9 rounded-xl object-cover shadow-[0_2px_8px_rgba(2,18,44,0.2)] group-hover:scale-105 transition-transform" 
+          />
           <div className="flex items-center gap-2">
             <span className="font-headline text-lg font-bold tracking-tight text-white group-hover:text-accent transition-colors">
-              Vertrix Solutions<span className="text-accent">.</span>
+              VetriX Solutions<span className="text-accent">.</span>
             </span>
             <span className="hidden sm:inline-flex px-2 py-0.5 rounded-md bg-surface-elevated border border-border-ui text-[11px] font-medium text-text-secondary">
               Studio

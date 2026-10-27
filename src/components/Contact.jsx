@@ -49,11 +49,13 @@ export default function Contact() {
           {/* Left Column: Contact Specifications (5 cols) */}
           <div className="lg:col-span-5 p-8 rounded-2xl bg-surface border border-border-ui flex flex-col gap-6">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-accent text-accent-text border border-accent/20 flex items-center justify-center font-headline font-extrabold text-lg shadow-[0_4px_12px_rgba(110,21,40,0.2)]">
-                V
-              </div>
+              <img 
+                src="/logo-icon.png" 
+                alt="VetriX Solutions Logo" 
+                className="w-10 h-10 rounded-xl object-cover shadow-[0_4px_12px_rgba(2,18,44,0.2)]" 
+              />
               <div>
-                <h3 className="font-headline text-lg font-bold text-white">Vertrix Solutions</h3>
+                <h3 className="font-headline text-lg font-bold text-white">VetriX Solutions</h3>
                 <p className="text-xs text-accent font-medium">
                   Engineering studio
                 </p>

@@ -19,11 +19,13 @@ export default function Footer() {
           {/* Brand Info (5 cols) */}
           <div className="lg:col-span-5 flex flex-col gap-3">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-accent text-accent-text border border-accent/20 flex items-center justify-center font-headline font-bold text-sm shadow-[0_2px_8px_rgba(110,21,40,0.15)]">
-                V
-              </div>
+              <img 
+                src="/logo-icon.png" 
+                alt="VetriX Solutions Logo" 
+                className="w-8 h-8 rounded-lg object-cover shadow-[0_2px_8px_rgba(2,18,44,0.15)]" 
+              />
               <span className="font-headline text-lg font-bold text-white tracking-tight">
-                Vertrix Solutions
+                VetriX Solutions
               </span>
             </div>
             <p className="text-xs text-accent font-medium mt-1">
