@@ -109,10 +109,10 @@ export default function Navbar() {
     <header className="fixed top-4 md:top-5 inset-x-0 mx-auto w-[94%] max-w-[1160px] z-50 transition-all duration-300">
       {/* Floating Island Dock with Dynamic Scroll State */}
       <div 
-        className={`h-16 px-4 md:px-6 rounded-2xl bg-surface/92 backdrop-blur-xl border transition-all duration-200 flex items-center justify-between ${
+        className={`h-16 px-4 md:px-6 rounded-2xl bg-surface/95 backdrop-blur-xl border transition-all duration-200 flex items-center justify-between ${
           isScrolled 
-            ? 'shadow-[0_16px_36px_rgba(110,21,40,0.12)] border-border-ui/90 bg-surface/98' 
-            : 'shadow-[0_8px_24px_rgba(110,21,40,0.06)] border-border-ui/70'
+            ? 'shadow-[0_8px_24px_rgba(37,99,235,0.10)] border-border-ui bg-surface/99' 
+            : 'shadow-[0_4px_16px_rgba(0,0,0,0.08)] border-border-ui/70'
         }`}
       >
         
@@ -125,10 +125,10 @@ export default function Navbar() {
           <img 
             src="/logo-icon.png" 
             alt="VetriX Solutions Logo" 
-            className="w-9 h-9 rounded-xl object-cover shadow-[0_2px_8px_rgba(2,18,44,0.2)] group-hover:scale-105 transition-transform" 
+            className="w-9 h-9 rounded-xl object-cover shadow-[0_2px_8px_rgba(0,0,0,0.10)] group-hover:scale-105 transition-transform" 
           />
           <div className="flex items-center gap-2">
-            <span className="font-headline text-lg font-bold tracking-tight text-white group-hover:text-accent transition-colors">
+            <span className="font-headline text-lg font-bold tracking-tight text-text-primary group-hover:text-accent transition-colors">
               VetriX Solutions<span className="text-accent">.</span>
             </span>
             <span className="hidden sm:inline-flex px-2 py-0.5 rounded-md bg-surface-elevated border border-border-ui text-[11px] font-medium text-text-secondary">
@@ -147,7 +147,7 @@ export default function Navbar() {
               className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 ${
                 activeTab === link.id
                   ? 'bg-accent text-accent-text font-semibold shadow-sm'
-                  : 'text-text-secondary hover:text-white hover:bg-surface-elevated/40'
+                  : 'text-text-secondary hover:text-text-primary hover:bg-surface-elevated/40'
               }`}
             >
               {link.label}
@@ -160,7 +160,7 @@ export default function Navbar() {
 
           {/* Single Primary Action Button */}
           <a
-            className="hidden sm:inline-flex items-center justify-center gap-1.5 h-10 px-5 rounded-xl bg-accent text-accent-text font-headline text-xs font-bold hover:bg-accent-hover transition-colors duration-150 shadow-[0_4px_16px_rgba(110,21,40,0.22)] focus:outline-none focus:ring-2 focus:ring-accent"
+            className="hidden sm:inline-flex items-center justify-center gap-1.5 h-10 px-5 rounded-xl bg-accent text-accent-text font-headline text-xs font-bold hover:bg-accent-hover transition-colors duration-150 shadow-[0_4px_18px_rgba(37,99,235,0.30)] focus:outline-none focus:ring-2 focus:ring-accent"
             href="#contact"
             onClick={(e) => handleNavClick(e, 'contact')}
           >
@@ -171,7 +171,7 @@ export default function Navbar() {
           {/* Mobile Menu Toggle Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-xl bg-surface-elevated border border-border-ui text-text-secondary hover:text-white transition-colors"
+            className="lg:hidden p-2 rounded-xl bg-surface-elevated border border-border-ui text-text-secondary hover:text-text-primary transition-colors"
             aria-label="Toggle menu"
           >
             <span className="material-symbols-outlined text-[22px]">
@@ -183,7 +183,7 @@ export default function Navbar() {
 
       {/* Floating Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden mt-2 p-5 rounded-2xl bg-surface/98 backdrop-blur-2xl border border-border-ui shadow-2xl flex flex-col gap-1.5 animate-in fade-in slide-in-from-top-2">
+        <div className="lg:hidden mt-2 p-5 rounded-2xl bg-surface/99 backdrop-blur-2xl border border-border-ui shadow-xl flex flex-col gap-1.5 animate-in fade-in slide-in-from-top-2">
           {navLinks.map((link) => (
             <a
               key={link.id}
@@ -192,7 +192,7 @@ export default function Navbar() {
               className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${
                 activeTab === link.id
                   ? 'bg-accent text-accent-text font-semibold shadow-sm'
-                  : 'text-text-secondary hover:text-white hover:bg-surface-elevated/50'
+                  : 'text-text-secondary hover:text-text-primary hover:bg-surface-elevated'
               }`}
             >
               {link.label}

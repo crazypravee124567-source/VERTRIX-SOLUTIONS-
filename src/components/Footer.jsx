@@ -24,7 +24,7 @@ export default function Footer() {
                 alt="VetriX Solutions Logo" 
                 className="w-8 h-8 rounded-lg object-cover shadow-[0_2px_8px_rgba(2,18,44,0.15)]" 
               />
-              <span className="font-headline text-lg font-bold text-white tracking-tight">
+              <span className="font-headline text-lg font-bold text-text-primary tracking-tight">
                 VetriX Solutions
               </span>
             </div>
@@ -38,7 +38,7 @@ export default function Footer() {
 
           {/* Quick Navigation (3 cols) */}
           <div className="lg:col-span-3 flex flex-col gap-3">
-            <span className="text-xs font-semibold text-white">
+            <span className="text-xs font-semibold text-text-primary">
               Navigation
             </span>
             <nav className="flex flex-col gap-2">
@@ -56,7 +56,7 @@ export default function Footer() {
 
           {/* Contact & Status (4 cols) */}
           <div className="lg:col-span-4 flex flex-col gap-3">
-            <span className="text-xs font-semibold text-white">
+            <span className="text-xs font-semibold text-text-primary">
               Headquarters
             </span>
             <div className="flex flex-col gap-2 font-body text-xs text-text-secondary">
@@ -66,9 +66,9 @@ export default function Footer() {
                 </span>
                 <a
                   className="hover:text-accent transition-colors duration-150"
-                  href="mailto:vertrixsolutionscbe@gmail.com"
+                  href="mailto:vetrixsolutionscbe@gmail.com"
                 >
-                  vertrixsolutionscbe@gmail.com
+                  vetrixsolutionscbe@gmail.com
                 </a>
               </div>
 

@@ -29,7 +29,7 @@ export default function AboutStrip() {
             <div className="w-12 h-12 rounded-lg bg-surface-elevated border border-border-ui flex items-center justify-center shrink-0">
               <span className="material-symbols-outlined text-accent text-[26px]">format_quote</span>
             </div>
-            <p className="font-headline text-xl md:text-2xl font-semibold text-white tracking-tight leading-snug">
+            <p className="font-headline text-xl md:text-2xl font-semibold text-text-primary tracking-tight leading-snug">
               “Vertrix Solutions partners with businesses to build reliable, high-performance digital products through disciplined engineering and transparent execution.”
             </p>
           </div>
@@ -46,7 +46,7 @@ export default function AboutStrip() {
                 <div className="w-12 h-12 rounded-lg bg-surface-elevated border border-border-ui flex items-center justify-center text-accent mb-6">
                   <span className="material-symbols-outlined text-[24px]">{item.icon}</span>
                 </div>
-                <h2 className="font-headline text-lg font-bold text-white mb-2">
+                <h2 className="font-headline text-lg font-bold text-text-primary mb-2">
                   {item.title}
                 </h2>
                 <p className="font-body text-sm text-text-secondary leading-relaxed">

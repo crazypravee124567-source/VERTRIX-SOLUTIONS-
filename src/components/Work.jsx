@@ -60,7 +60,7 @@ export default function Work({ onOpenCaseModal }) {
               Verified production deployments
             </span>
           </div>
-          <h2 className="font-headline text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-3">
+          <h2 className="font-headline text-3xl md:text-4xl font-extrabold text-text-primary tracking-tight mb-3">
             Engineered solutions in action
           </h2>
           <p className="font-body text-base text-text-secondary max-w-xl leading-relaxed">
@@ -86,7 +86,7 @@ export default function Work({ onOpenCaseModal }) {
                   </span>
                 </div>
 
-                <h3 className="font-headline text-xl font-bold text-white mb-1">
+                <h3 className="font-headline text-xl font-bold text-text-primary mb-1">
                   {item.title}
                 </h3>
                 <p className="text-xs text-accent font-medium mb-3">
@@ -101,7 +101,7 @@ export default function Work({ onOpenCaseModal }) {
                   {item.techStack.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2.5 py-1 rounded bg-canvas font-mono text-xs text-white border border-border-ui"
+                      className="px-2.5 py-1 rounded bg-canvas font-mono text-xs text-text-secondary border border-border-ui"
                     >
                       {tech}
                     </span>
@@ -126,7 +126,7 @@ export default function Work({ onOpenCaseModal }) {
 
               {/* Pinned Button (No All-Caps) */}
               <button
-                className="w-full h-12 rounded-lg bg-surface-elevated hover:bg-surface-elevated/80 border border-border-ui hover:border-accent text-white hover:text-accent text-xs font-semibold transition-colors duration-150 flex items-center justify-center gap-2 cursor-pointer mt-auto"
+                className="w-full h-12 rounded-lg bg-surface-elevated hover:bg-canvas border border-border-ui hover:border-accent text-text-secondary hover:text-accent text-xs font-semibold transition-colors duration-150 flex items-center justify-center gap-2 cursor-pointer mt-auto"
                 onClick={() => onOpenCaseModal(item.id)}
               >
                 <span>Inspect system blueprint</span>

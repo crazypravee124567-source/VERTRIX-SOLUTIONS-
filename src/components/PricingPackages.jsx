@@ -70,7 +70,7 @@ export default function PricingPackages() {
           <span className="text-xs font-semibold text-accent mb-2">
             Structured investments
           </span>
-          <h2 className="font-headline text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-3">
+          <h2 className="font-headline text-3xl md:text-4xl font-extrabold text-text-primary tracking-tight mb-3">
             Website development packages
           </h2>
           <p className="font-body text-base text-text-secondary max-w-xl leading-relaxed">
@@ -99,12 +99,12 @@ export default function PricingPackages() {
                 <span className="text-xs text-text-secondary font-medium">
                   {pkg.tier}
                 </span>
-                <h3 className="font-headline text-lg font-bold text-white mt-1">
+                <h3 className="font-headline text-lg font-bold text-text-primary mt-1">
                   {pkg.name}
                 </h3>
                 
                 <div className="mt-4 mb-6">
-                  <span className="font-mono text-3xl font-extrabold text-white">
+                  <span className="font-mono text-3xl font-extrabold text-text-primary">
                     {pkg.price}
                   </span>
                   <span className="text-xs text-text-muted ml-1 font-medium">
@@ -120,7 +120,7 @@ export default function PricingPackages() {
                       }`}>
                         {fIdx === 4 && pkg.highlightFast ? 'bolt' : 'check_circle'}
                       </span>
-                      <span className={fIdx === 4 && pkg.highlightFast ? 'text-white font-medium' : ''}>
+                      <span className={fIdx === 4 && pkg.highlightFast ? 'text-text-primary font-medium' : ''}>
                         {feat}
                       </span>
                     </li>
@@ -134,7 +134,7 @@ export default function PricingPackages() {
                   className={`w-full h-12 rounded-lg text-center font-headline text-xs font-bold transition-colors duration-150 flex items-center justify-center ${
                     pkg.popular
                       ? 'bg-accent text-accent-text hover:bg-accent-hover shadow-md'
-                      : 'bg-surface-elevated hover:bg-surface-elevated/70 border border-border-ui text-white hover:border-accent hover:text-accent'
+                      : 'bg-surface-elevated hover:bg-surface-elevated/70 border border-border-ui text-text-primary hover:border-accent hover:text-accent'
                   }`}
                   href="#contact"
                 >

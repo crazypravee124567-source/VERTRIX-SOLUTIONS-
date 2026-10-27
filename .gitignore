@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Environment variables — keep credentials out of source control
+.env
+.env.*

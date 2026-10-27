@@ -4,7 +4,7 @@ Based on the Tranzora Digital 5-Step Framework for Human-Crafted UI.
 ---
 
 ## 1. Brand Facts
-- **Brand**: Vertrix Solutions (`vertrixsolutionscbe@gmail.com`)
+- **Brand**: VetriX Solutions (`vetrixsolutionscbe@gmail.com`)
 - **HQ**: Coimbatore, Tamil Nadu, India
 - **Core Value**: Production-ready web, mobile, and custom software engineering delivered with predictable milestones.
 - **Brand Identity**: Vertrix Solutions monogram `V` badge + Vertrix Solutions studio wordmark.
@@ -12,26 +12,26 @@ Based on the Tranzora Digital 5-Step Framework for Human-Crafted UI.
 
 ---
 
-## 2. 60/30/10 Color Tokens (Light Sand & Wine Red Edition)
-- **60% Light Sand Canvas & Main Background**:
-  - `bg-background`: `#F7F3EB` (pure luxury Light Sand)
-  - `bg-canvas`: `#EFE8DC` (alternating Light Sand sections)
-- **30% Sand Structure & Cards**:
-  - `surface`: `#FCFAF6` (clean Light Sand card surfaces)
-  - `surface-elevated`: `#F2EBE0` (elevated sandstone cards)
-  - `surface-subtle`: `#F8F4EC`
-  - `border-ui`: `#DFD3C0` (1px solid, clean non-fuzzy sand boundaries)
-  - `border-wine`: `#6E1528` (deep wine borders)
-  - `text-primary`: `#450C17` (deep Wine Red headings & titles)
-  - `text-secondary`: `#7A2838` (rich Wine Red body copy)
-  - `text-muted`: `#9C4E5E` (muted Wine Red meta)
-- **10% ONE Accent Color (Wine Red CTA)**:
-  - `accent`: `#6E1528` (Velvet Wine Red for primary CTA buttons, active state, and key KPI metrics)
-  - `accent-hover`: `#851D33`
-  - `accent-text`: `#FCFAF6` (Light Sand text on Wine Red buttons)
+## 2. 60/30/10 Color Tokens (Royal Blue & Grey Light Edition)
+- **60% White & Light Grey Canvas (Main Backgrounds)**:
+  - `bg-background`: `#FFFFFF` (Pure white — main page background, navbar, content sections)
+  - `bg-canvas`: `#F3F4F6` (Light grey — alternate sections, card backgrounds)
+- **30% Structure & Cards**:
+  - `surface`: `#FFFFFF` (White card surfaces)
+  - `surface-elevated`: `#F3F4F6` (Light grey elevated cards)
+  - `surface-subtle`: `#F9FAFB` (Near-white for form fields)
+  - `border-ui`: `#E5E7EB` (1px solid, clean light-grey borders)
+  - `border-accent`: `#2563EB` (Royal Blue accent borders)
+  - `text-primary`: `#111827` (Dark charcoal — headings, titles, navigation text)
+  - `text-secondary`: `#6B7280` (Medium grey — paragraphs, descriptions, subtitles)
+  - `text-muted`: `#9CA3AF` (Muted metadata & tags)
+- **10% ONE Accent Color (Royal Blue CTA)**:
+  - `accent`: `#2563EB` (Royal Blue for primary CTA buttons, active state, links, icons)
+  - `accent-hover`: `#1D4ED8` (Darker Royal Blue hover state)
+  - `accent-text`: `#FFFFFF` (White text on Royal Blue buttons for AAA contrast)
 - **Semantic Feedback**:
-  - `success`: `#15803D` (Forest green for live node telemetry & uptime stats)
-  - `error`: `#B91C1C`
+  - `success`: `#10B981` (Emerald green for live status & uptime stats)
+  - `error`: `#EF4444`
 
 ---
 

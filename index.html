@@ -19,46 +19,55 @@
         theme: {
           extend: {
             colors: {
-              "white": "#450C17",
-              "background": "#F7F3EB",
-              "canvas": "#EFE8DC",
-              "surface": "#FCFAF6",
-              "surface-elevated": "#F2EBE0",
-              "surface-subtle": "#F8F4EC",
-              "border-ui": "#DFD3C0",
-              "border-wine": "#6E1528",
-              "text-primary": "#450C17",
-              "text-secondary": "#7A2838",
-              "text-muted": "#9C4E5E",
-              "accent": "#6E1528",
-              "accent-hover": "#851D33",
-              "accent-text": "#FCFAF6",
-              "success": "#15803D",
-              "error": "#B91C1C",
-              
-              /* Dedicated Wine Red & Light Sand tokens */
-              "wine": "#6E1528",
-              "wine-deep": "#450C17",
-              "wine-surface": "#F6EAEF",
-              "wine-border": "#C498A3",
-              "wine-light": "#8A2037",
-              "sand": "#F7F3EB",
-              "sand-light": "#FCFAF6",
-              "sand-dark": "#DFD3C0",
-              
-              /* Compatibility aliases */
+              "white": "#FFFFFF",
+              "background": "#FFFFFF",
+              "canvas": "#F3F4F6",
+              "surface": "#FFFFFF",
+              "surface-elevated": "#F3F4F6",
+              "surface-subtle": "#F9FAFB",
+              "border-ui": "#E5E7EB",
+              "border-accent": "#2563EB",
+              "text-primary": "#111827",
+              "text-secondary": "#6B7280",
+              "text-muted": "#9CA3AF",
+              "accent": "#2563EB",
+              "accent-hover": "#1D4ED8",
+              "accent-text": "#FFFFFF",
+              "success": "#10B981",
+              "error": "#EF4444",
+
+              /* Royal Blue palette tokens */
+              "royal-blue": "#2563EB",
+              "royal-blue-light": "#3B82F6",
+              "royal-blue-dark": "#1D4ED8",
+              "royal-blue-surface": "#EFF6FF",
+              "royal-blue-border": "#BFDBFE",
+
+              /* Compatibility aliases — mapped to new light palette */
+              "chrysocolla": "#2563EB",
+              "chrysocolla-light": "#3B82F6",
+              "chrysocolla-dark": "#1D4ED8",
+              "wine": "#2563EB",
+              "wine-deep": "#1D4ED8",
+              "wine-surface": "#EFF6FF",
+              "wine-border": "#BFDBFE",
+              "wine-light": "#3B82F6",
+              "sand": "#FFFFFF",
+              "sand-light": "#F9FAFB",
+              "sand-dark": "#E5E7EB",
+
               "surface-container-lowest": "#FFFFFF",
-              "surface-container-low": "#FCFAF6",
-              "surface-container": "#F7F3EB",
-              "surface-container-high": "#EFE8DC",
-              "surface-container-highest": "#E5DCCE",
-              "on-surface": "#450C17",
-              "on-surface-variant": "#7A2838",
-              "primary-container": "#6E1528",
-              "primary": "#6E1528",
-              "secondary": "#7A2838",
-              "tertiary": "#8A2037",
-              "outline-variant": "#DFD3C0"
+              "surface-container-low": "#F9FAFB",
+              "surface-container": "#F3F4F6",
+              "surface-container-high": "#E5E7EB",
+              "surface-container-highest": "#D1D5DB",
+              "on-surface": "#111827",
+              "on-surface-variant": "#6B7280",
+              "primary-container": "#EFF6FF",
+              "primary": "#2563EB",
+              "secondary": "#6B7280",
+              "tertiary": "#3B82F6",
+              "outline-variant": "#E5E7EB"
             },
             borderRadius: {
               "DEFAULT": "8px",
@@ -97,8 +106,8 @@
         html, body {
           margin: 0;
           padding: 0;
-          background-color: #F7F3EB;
-          color: #450C17;
+          background-color: #FFFFFF;
+          color: #111827;
           font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
           scroll-behavior: smooth;
         }
@@ -106,14 +115,14 @@
           width: 8px;
         }
         ::-webkit-scrollbar-track {
-          background: #EFE8DC;
+          background: #F3F4F6;
         }
         ::-webkit-scrollbar-thumb {
-          background: #DFD3C0;
+          background: #D1D5DB;
           border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-          background: #6E1528;
+          background: #2563EB;
         }
       }
     </style>

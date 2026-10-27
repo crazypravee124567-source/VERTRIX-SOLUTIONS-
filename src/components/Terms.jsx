@@ -35,7 +35,7 @@ export default function Terms() {
         <div className="p-8 md:p-12 rounded-2xl bg-surface border border-border-ui">
           <div className="flex items-center gap-3 mb-8">
             <span className="material-symbols-outlined text-accent text-[26px]">gavel</span>
-            <h3 className="font-headline text-2xl font-bold text-white tracking-tight">
+            <h3 className="font-headline text-2xl font-bold text-text-primary tracking-tight">
               Terms &amp; working conditions
             </h3>
           </div>

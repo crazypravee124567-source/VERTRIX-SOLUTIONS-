@@ -49,7 +49,7 @@ export default function CreativePricing() {
           <span className="text-xs font-semibold text-accent mb-2">
             Mobile &amp; web suite
           </span>
-          <h2 className="font-headline text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-3">
+          <h2 className="font-headline text-3xl md:text-4xl font-extrabold text-text-primary tracking-tight mb-3">
             Mobile apps &amp; custom web platforms
           </h2>
           <p className="font-body text-base text-text-secondary max-w-xl leading-relaxed">
@@ -73,7 +73,7 @@ export default function CreativePricing() {
                     {card.price}<span className="text-text-muted text-xs ml-0.5">+</span>
                   </span>
                 </div>
-                <h3 className="font-headline text-lg font-bold text-white mb-2">
+                <h3 className="font-headline text-lg font-bold text-text-primary mb-2">
                   {card.title}
                 </h3>
                 <p className="font-body text-sm text-text-secondary leading-relaxed mb-6">

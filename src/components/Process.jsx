@@ -43,7 +43,7 @@ export default function Process() {
           <span className="text-xs font-semibold text-accent mb-2">
             Disciplined delivery
           </span>
-          <h2 className="font-headline text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-3">
+          <h2 className="font-headline text-3xl md:text-4xl font-extrabold text-text-primary tracking-tight mb-3">
             Engineered delivery pipeline
           </h2>
           <p className="font-body text-base text-text-secondary max-w-xl leading-relaxed">
@@ -62,7 +62,7 @@ export default function Process() {
                 <div className="w-10 h-10 rounded-lg bg-surface-elevated border border-border-ui text-accent flex items-center justify-center font-mono text-sm font-bold mb-4">
                   {step.num}
                 </div>
-                <h3 className="font-headline text-base font-bold text-white mb-2">
+                <h3 className="font-headline text-base font-bold text-text-primary mb-2">
                   {step.title}
                 </h3>
                 <p className="font-body text-xs text-text-secondary leading-relaxed">

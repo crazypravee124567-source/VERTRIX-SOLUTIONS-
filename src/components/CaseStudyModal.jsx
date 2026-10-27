@@ -52,7 +52,7 @@ export default function CaseStudyModal({ caseKey, onClose }) {
                 <span>{data.timeline}</span>
               </span>
             </div>
-            <h3 className="font-headline text-2xl font-bold text-white mt-1" id="modalTitle">
+            <h3 className="font-headline text-2xl font-bold text-text-primary mt-1" id="modalTitle">
               {data.title}
             </h3>
             <p className="font-body text-sm text-text-secondary">
@@ -63,7 +63,7 @@ export default function CaseStudyModal({ caseKey, onClose }) {
           {/* Close Button */}
           <button
             aria-label="Close dialog"
-            className="w-10 h-10 rounded-lg bg-surface-elevated hover:bg-surface-elevated/70 text-text-secondary hover:text-white flex items-center justify-center transition-colors border border-border-ui cursor-pointer"
+            className="w-10 h-10 rounded-lg bg-surface-elevated hover:bg-surface-elevated/70 text-text-secondary hover:text-text-primary flex items-center justify-center transition-colors border border-border-ui cursor-pointer"
             onClick={onClose}
           >
             <span className="material-symbols-outlined text-[20px]">close</span>
@@ -90,7 +90,7 @@ export default function CaseStudyModal({ caseKey, onClose }) {
             </div>
             <div className="p-3 rounded-lg bg-surface border border-border-ui">
               <span className="text-[11px] text-text-muted font-medium block">Latency</span>
-              <span className="font-mono text-xl font-bold text-white mt-0.5 block">{data.latencyVal}</span>
+              <span className="font-mono text-xl font-bold text-text-primary mt-0.5 block">{data.latencyVal}</span>
               <span className="font-body text-xs text-text-secondary">{data.latencyLabel}</span>
             </div>
           </div>
@@ -116,22 +116,22 @@ export default function CaseStudyModal({ caseKey, onClose }) {
           </div>
 
           <div className="flex flex-col gap-3">
-            <h4 className="text-xs text-white font-semibold flex items-center gap-2">
+            <h4 className="text-xs text-text-primary font-semibold flex items-center gap-2">
               <span className="material-symbols-outlined text-[16px]">security</span>
               Architecture standards
             </h4>
             <div className="p-4 rounded-xl bg-canvas border border-border-ui flex flex-col gap-3 font-body text-xs text-text-secondary">
               <div className="flex items-start gap-2">
                 <span className="material-symbols-outlined text-accent text-[16px] shrink-0">verified_user</span>
-                <span className="text-white">{data.archSpec}</span>
+                <span className="text-text-primary">{data.archSpec}</span>
               </div>
               <div className="flex items-start gap-2">
                 <span className="material-symbols-outlined text-success text-[16px] shrink-0">database</span>
-                <span className="text-white">{data.dataSpec}</span>
+                <span className="text-text-primary">{data.dataSpec}</span>
               </div>
               <div className="flex items-start gap-2">
                 <span className="material-symbols-outlined text-text-muted text-[16px] shrink-0">cloud_sync</span>
-                <span className="text-white">{data.deploySpec}</span>
+                <span className="text-text-primary">{data.deploySpec}</span>
               </div>
             </div>
 
@@ -143,7 +143,7 @@ export default function CaseStudyModal({ caseKey, onClose }) {
                 {data.techStack.map((tech) => (
                   <span
                     key={tech}
-                    className="px-2 py-0.5 rounded bg-surface-elevated font-mono text-[11px] text-white border border-border-ui"
+                    className="px-2 py-0.5 rounded bg-surface-elevated font-mono text-[11px] text-text-primary border border-border-ui"
                   >
                     {tech}
                   </span>
@@ -160,7 +160,7 @@ export default function CaseStudyModal({ caseKey, onClose }) {
           </p>
           <div className="flex items-center gap-3 w-full sm:w-auto">
             <button
-              className="h-12 px-5 rounded-lg bg-surface-elevated hover:bg-surface-elevated/70 text-text-secondary hover:text-white text-xs font-semibold transition-colors border border-border-ui w-full sm:w-auto cursor-pointer"
+              className="h-12 px-5 rounded-lg bg-surface-elevated hover:bg-surface-elevated/70 text-text-secondary hover:text-text-primary text-xs font-semibold transition-colors border border-border-ui w-full sm:w-auto cursor-pointer"
               onClick={onClose}
             >
               Close

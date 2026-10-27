@@ -23,7 +23,7 @@ export default function MaintenancePricing() {
                 </span>
               </div>
 
-              <h3 className="font-headline text-2xl md:text-3xl font-bold text-white mb-3">
+              <h3 className="font-headline text-2xl md:text-3xl font-bold text-text-primary mb-3">
                 Proactive web &amp; app maintenance &amp; technical care
               </h3>
               
@@ -57,7 +57,7 @@ export default function MaintenancePricing() {
                   Monthly retainer
                 </span>
                 <div className="flex items-baseline gap-1 mt-1">
-                  <span className="font-mono text-3xl font-extrabold text-white">₹2,000</span>
+                  <span className="font-mono text-3xl font-extrabold text-text-primary">₹2,000</span>
                   <span className="text-xs text-text-secondary font-medium">/ month onwards</span>
                 </div>
               </div>

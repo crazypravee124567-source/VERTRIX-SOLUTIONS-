@@ -12,7 +12,7 @@ export default function PaymentMilestones() {
     {
       percentage: '30%',
       phase: 'Mid checkpoint',
-      color: 'text-wine-light',
+      color: 'text-chrysocolla-light',
       title: '30% staging approval',
       description: 'Paid after interactive UI sign-off and functional staging preview approval on private sandbox.'
     },
@@ -34,7 +34,7 @@ export default function PaymentMilestones() {
           <span className="text-xs font-semibold text-accent mb-2">
             Financial integrity
           </span>
-          <h2 className="font-headline text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-3">
+          <h2 className="font-headline text-3xl md:text-4xl font-extrabold text-text-primary tracking-tight mb-3">
             Transparent payment milestones
           </h2>
           <p className="font-body text-base text-text-secondary max-w-xl leading-relaxed">
@@ -45,7 +45,7 @@ export default function PaymentMilestones() {
         {/* Milestone Stage Visual Tracker */}
         <div className="w-full bg-canvas rounded-full h-2 mb-10 overflow-hidden flex border border-border-ui">
           <div className="h-full bg-accent w-1/2" />
-          <div className="h-full bg-wine-light w-[30%]" />
+          <div className="h-full bg-chrysocolla-light w-[30%]" />
           <div className="h-full bg-success w-[20%]" />
         </div>
 
@@ -65,7 +65,7 @@ export default function PaymentMilestones() {
                     {m.phase}
                   </span>
                 </div>
-                <h3 className="font-headline text-lg font-bold text-white mb-2">
+                <h3 className="font-headline text-lg font-bold text-text-primary mb-2">
                   {m.title}
                 </h3>
                 <p className="font-body text-sm text-text-secondary leading-relaxed">
@@ -83,7 +83,7 @@ export default function PaymentMilestones() {
               calculate
             </span>
             <div>
-              <span className="font-headline text-sm font-bold text-white block">
+              <span className="font-headline text-sm font-bold text-text-primary block">
                 Concrete milestone example:
               </span>
               <p className="font-body text-xs text-text-secondary mt-0.5">

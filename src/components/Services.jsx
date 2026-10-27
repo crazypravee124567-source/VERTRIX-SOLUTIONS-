@@ -11,7 +11,7 @@ export default function Services() {
           <span className="text-xs font-semibold text-accent mb-2">
             Core capabilities
           </span>
-          <h2 className="font-headline text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-3">
+          <h2 className="font-headline text-3xl md:text-4xl font-extrabold text-text-primary tracking-tight mb-3">
             Website &amp; mobile app services
           </h2>
           <p className="font-body text-base text-text-secondary max-w-xl leading-relaxed">
@@ -32,7 +32,7 @@ export default function Services() {
                     {service.icon}
                   </span>
                 </div>
-                <h3 className="font-headline text-lg font-bold text-white mb-2">
+                <h3 className="font-headline text-lg font-bold text-text-primary mb-2">
                   {service.title}
                 </h3>
                 <p className="font-body text-sm text-text-secondary leading-relaxed mb-6">
