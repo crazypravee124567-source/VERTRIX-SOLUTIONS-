@@ -113,17 +113,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-lg bg-surface-elevated border border-border-ui flex items-center justify-center shrink-0 text-accent">
-                  <span className="material-symbols-outlined text-[20px]">schedule</span>
-                </div>
-                <div>
-                  <span className="text-xs text-text-muted font-medium block">
-                    Operating hours
-                  </span>
-                  <p className="font-body text-sm text-white font-medium">Mon – Sat: 9:30 AM – 7:00 PM IST</p>
-                </div>
-              </div>
+           
             </div>
 
             {/* Direct Channel Actions */}
