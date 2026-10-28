@@ -5,7 +5,6 @@ import AboutStrip from './components/AboutStrip';
 import Services from './components/Services';
 import Work from './components/Work';
 import DemoProjectsPage from './components/DemoProjectsPage';
-import CaseStudyModal from './components/CaseStudyModal';
 import PricingPackages from './components/PricingPackages';
 import CreativePricing from './components/CreativePricing';
 import MaintenancePricing from './components/MaintenancePricing';
@@ -19,7 +18,6 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState(() => {
     return window.location.hash === '#demos' ? 'demos' : 'home';
   });
-  const [selectedCaseStudy, setSelectedCaseStudy] = useState(null);
 
   // Sync with browser back/forward and hash changes
   useEffect(() => {
@@ -79,7 +77,6 @@ export default function App() {
         {currentPage === 'demos' ? (
           <DemoProjectsPage
             onBackToHome={() => handleNavigate('home')}
-            onOpenCaseModal={(id) => setSelectedCaseStudy(id)}
           />
         ) : (
           <>
@@ -87,7 +84,6 @@ export default function App() {
             <AboutStrip />
             <Services />
             <Work
-              onOpenCaseModal={(id) => setSelectedCaseStudy(id)}
               onNavigateToDemos={() => handleNavigate('demos')}
             />
             <PricingPackages />
@@ -103,12 +99,6 @@ export default function App() {
 
       {/* Footer */}
       <Footer onNavigate={handleNavigate} />
-
-      {/* Interactive Case Study Blueprint Modal */}
-      <CaseStudyModal
-        caseKey={selectedCaseStudy}
-        onClose={() => setSelectedCaseStudy(null)}
-      />
     </div>
   );
 }
