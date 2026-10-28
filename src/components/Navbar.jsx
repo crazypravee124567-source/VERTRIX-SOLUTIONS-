@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
-export default function Navbar() {
+export default function Navbar({ currentPage = 'home', onNavigate }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('home');
   const [isScrolled, setIsScrolled] = useState(false);
 
   const navLinks = [
     { id: 'home', label: 'Home', href: '#home' },
+    { id: 'demos', label: 'Demo projects', href: '#demos', isPage: true, badge: '2 Live' },
     { id: 'services', label: 'Services', href: '#services' },
     { id: 'work', label: 'Case studies', href: '#work' },
     { id: 'pricing', label: 'Pricing', href: '#pricing' },
@@ -14,8 +15,14 @@ export default function Navbar() {
     { id: 'contact', label: 'Contact', href: '#contact' },
   ];
 
-  // Dynamic Scrollspy & scroll elevation
+  const effectiveActiveTab = currentPage === 'demos' ? 'demos' : activeTab;
+
+  // Dynamic Scrollspy & scroll elevation for Home page
   useEffect(() => {
+    if (currentPage !== 'home') {
+      return;
+    }
+
     let ticking = false;
 
     const handleScroll = () => {
@@ -39,7 +46,7 @@ export default function Navbar() {
           // Edge case 2: Near top always activates home
           if (scrollY < 100) {
             setActiveTab('home');
-            if (window.location.hash && window.location.hash !== '#' && window.location.hash !== '#home') {
+            if (window.location.hash && window.location.hash !== '#' && window.location.hash !== '#home' && window.location.hash !== '#demos') {
               window.history.replaceState(null, '', window.location.pathname + window.location.search);
             }
             ticking = false;
@@ -47,7 +54,6 @@ export default function Navbar() {
           }
 
           // Iterate sections in order from top to bottom
-          // triggerPoint is 220px below top of viewport (below floating dock)
           const sections = ['home', 'services', 'work', 'pricing', 'process', 'contact'];
           let currentSection = 'home';
           const triggerPoint = 220;
@@ -78,12 +84,33 @@ export default function Navbar() {
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [currentPage]);
 
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
-    setActiveTab(targetId);
     setMobileMenuOpen(false);
+
+    if (targetId === 'demos') {
+      setActiveTab('demos');
+      if (onNavigate) {
+        onNavigate('demos');
+      } else {
+        window.location.hash = '#demos';
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (currentPage !== 'home') {
+      if (onNavigate) {
+        onNavigate('home', targetId);
+      } else {
+        window.location.hash = targetId === 'home' ? '' : `#${targetId}`;
+      }
+      return;
+    }
+
+    setActiveTab(targetId);
 
     if (targetId === 'home') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -120,7 +147,7 @@ export default function Navbar() {
         <a 
           href="#home" 
           onClick={(e) => handleNavClick(e, 'home')}
-          className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-accent rounded-xl p-1"
+          className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-accent rounded-xl p-1 cursor-pointer"
         >
           <img 
             src="/logo-icon.png" 
@@ -137,20 +164,31 @@ export default function Navbar() {
           </div>
         </a>
 
-        {/* Center: Segmented Navigation Dock with Real-Time Scrollspy */}
+        {/* Center: Segmented Navigation Dock */}
         <nav className="hidden lg:flex items-center gap-1 p-1 rounded-xl bg-canvas/70 border border-border-ui/80">
           {navLinks.map((link) => (
             <a
               key={link.id}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.id)}
-              className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 ${
-                activeTab === link.id
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 flex items-center gap-1.5 cursor-pointer ${
+                effectiveActiveTab === link.id
                   ? 'bg-accent text-accent-text font-semibold shadow-sm'
                   : 'text-text-secondary hover:text-text-primary hover:bg-surface-elevated/40'
               }`}
             >
-              {link.label}
+              <span>{link.label}</span>
+              {link.badge && (
+                <span
+                  className={`text-[9px] font-mono px-1.5 py-0.2 rounded-full font-bold ${
+                    effectiveActiveTab === link.id
+                      ? 'bg-white/20 text-accent-text'
+                      : 'bg-accent/10 text-accent'
+                  }`}
+                >
+                  {link.badge}
+                </span>
+              )}
             </a>
           ))}
         </nav>
@@ -160,7 +198,7 @@ export default function Navbar() {
 
           {/* Single Primary Action Button */}
           <a
-            className="hidden sm:inline-flex items-center justify-center gap-1.5 h-10 px-5 rounded-xl bg-accent text-accent-text font-headline text-xs font-bold hover:bg-accent-hover transition-colors duration-150 shadow-[0_4px_18px_rgba(37,99,235,0.30)] focus:outline-none focus:ring-2 focus:ring-accent"
+            className="hidden sm:inline-flex items-center justify-center gap-1.5 h-10 px-5 rounded-xl bg-accent text-accent-text font-headline text-xs font-bold hover:bg-accent-hover transition-colors duration-150 shadow-[0_4px_18px_rgba(37,99,235,0.30)] focus:outline-none focus:ring-2 focus:ring-accent cursor-pointer"
             href="#contact"
             onClick={(e) => handleNavClick(e, 'contact')}
           >
@@ -171,7 +209,7 @@ export default function Navbar() {
           {/* Mobile Menu Toggle Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-xl bg-surface-elevated border border-border-ui text-text-secondary hover:text-text-primary transition-colors"
+            className="lg:hidden p-2 rounded-xl bg-surface-elevated border border-border-ui text-text-secondary hover:text-text-primary transition-colors cursor-pointer"
             aria-label="Toggle menu"
           >
             <span className="material-symbols-outlined text-[22px]">
@@ -189,19 +227,30 @@ export default function Navbar() {
               key={link.id}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.id)}
-              className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${
-                activeTab === link.id
+              className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-colors flex items-center justify-between cursor-pointer ${
+                effectiveActiveTab === link.id
                   ? 'bg-accent text-accent-text font-semibold shadow-sm'
                   : 'text-text-secondary hover:text-text-primary hover:bg-surface-elevated'
               }`}
             >
-              {link.label}
+              <span>{link.label}</span>
+              {link.badge && (
+                <span
+                  className={`text-[10px] font-mono px-2 py-0.5 rounded-full font-bold ${
+                    effectiveActiveTab === link.id
+                      ? 'bg-white/20 text-accent-text'
+                      : 'bg-accent/10 text-accent'
+                  }`}
+                >
+                  {link.badge}
+                </span>
+              )}
             </a>
           ))}
           <a
             href="#contact"
             onClick={(e) => handleNavClick(e, 'contact')}
-            className="mt-3 w-full h-11 rounded-xl bg-accent text-accent-text font-headline text-xs font-bold flex items-center justify-center gap-1.5"
+            className="mt-3 w-full h-11 rounded-xl bg-accent text-accent-text font-headline text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer"
           >
             <span>Get a quote</span>
             <span className="material-symbols-outlined text-[16px]">arrow_forward</span>

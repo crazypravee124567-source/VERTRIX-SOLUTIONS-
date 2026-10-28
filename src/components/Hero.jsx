@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Hero() {
+export default function Hero({ onExploreDemos }) {
   const techStack = ['Next.js 14', 'Flutter', 'React', 'Node.js', 'PostgreSQL', 'Tailwind'];
 
   return (
@@ -39,23 +39,34 @@ export default function Hero() {
               From zero-to-one MVP to enterprise scale. VetriX Solutions designs and ships blazing-fast web platforms and Flutter mobile apps with dedicated weekly sprint velocity.
             </p>
 
-            {/* Exactly ONE Primary Button + ONE Secondary Link */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mb-10 w-full sm:w-auto">
+            {/* Exactly ONE Primary Button + Secondary Action */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-4 mb-10 w-full sm:w-auto">
               <a
-                className="w-full sm:w-auto h-12 px-6 rounded-xl bg-accent text-accent-text font-headline text-sm font-bold hover:bg-accent-hover transition-colors duration-150 inline-flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-accent shadow-[0_4px_18px_rgba(37,99,235,0.30)]"
+                className="w-full sm:w-auto h-12 px-6 rounded-xl bg-accent text-accent-text font-headline text-sm font-bold hover:bg-accent-hover transition-colors duration-150 inline-flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-accent shadow-[0_4px_18px_rgba(37,99,235,0.30)] cursor-pointer"
                 href="#contact"
               >
                 <span>Start your project</span>
                 <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
               </a>
 
-              <a
-                className="text-sm font-medium text-text-primary hover:text-accent transition-colors inline-flex items-center gap-2 py-2"
-                href="#work"
-              >
-                <span>View case studies</span>
-                <span className="material-symbols-outlined text-[18px]">arrow_downward</span>
-              </a>
+              {onExploreDemos ? (
+                <button
+                  onClick={onExploreDemos}
+                  className="w-full sm:w-auto h-12 px-5 rounded-xl bg-surface-elevated hover:bg-canvas border border-border-ui hover:border-accent text-text-primary text-xs font-semibold transition-colors inline-flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
+                  <span>Explore live demos (2)</span>
+                  <span className="material-symbols-outlined text-[16px]">devices</span>
+                </button>
+              ) : (
+                <a
+                  className="text-sm font-medium text-text-primary hover:text-accent transition-colors inline-flex items-center gap-2 py-2"
+                  href="#work"
+                >
+                  <span>View case studies</span>
+                  <span className="material-symbols-outlined text-[18px]">arrow_downward</span>
+                </a>
+              )}
             </div>
 
             {/* Trust Metrics / Social Proof */}

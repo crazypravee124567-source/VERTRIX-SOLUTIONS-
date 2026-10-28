@@ -90,5 +90,53 @@ export const caseStudiesData = {
     dataSpec: "Double-entry bookkeeping SQL ledger backed by Apache Kafka for guaranteed message ordering.",
     deploySpec: "PCI-DSS Level 1 compliant infrastructure layout deployed across hardened cloud VPCs.",
     techStack: ["Next.js", "Go (Golang)", "Kafka", "PostgreSQL", "Tailwind CSS", "Docker"]
+  },
+  spiceroute: {
+    title: "Spice Route Biryani House",
+    subtitle: "Digital restaurant ordering & reservation platform",
+    sector: "Food & hospitality",
+    timeline: "Live Production Demo",
+    consoleId: "vertrix.console/spiceroute-live",
+    demoUrl: "https://spice-food-app-seven.vercel.app",
+    kpiVal: "4.8 / 5.0",
+    kpiLabel: "Customer satisfaction rating",
+    uptimeVal: "100%",
+    uptimeLabel: "Vercel Edge availability",
+    latencyVal: "<90ms",
+    latencyLabel: "Edge static & API response",
+    deliverables: [
+      "Categorized digital culinary catalog showcasing dum biryanis, curries, and regional South Indian delights.",
+      "Interactive table booking and seating reservation workflow with instant confirmations.",
+      "Dual Coimbatore restaurant locator with outlet operating hours and Google Maps route guidance.",
+      "Direct integration with WhatsApp ordering and instant telephone reservations."
+    ],
+    archSpec: "Vite + React single-page architecture styled with responsive Tailwind CSS utilities.",
+    dataSpec: "Modular JSON-driven culinary catalog schema with dynamic category filtering and fast search indexing.",
+    deploySpec: "Automated continuous deployment via Vercel Edge with global CDN caching and SSL termination.",
+    techStack: ["React", "Tailwind CSS", "Vite", "Vercel Edge", "Responsive UI"]
+  },
+  freshnest: {
+    title: "FreshNest Market",
+    subtitle: "Hyperlocal organic grocery e-commerce platform",
+    sector: "Hyperlocal e-commerce",
+    timeline: "Live Production Demo",
+    consoleId: "vertrix.console/freshnest-live",
+    demoUrl: "https://e-commerce-sample-website-sooty.vercel.app",
+    kpiVal: "<45m",
+    kpiLabel: "Farm-to-door delivery SLA",
+    uptimeVal: "100%",
+    uptimeLabel: "Storefront availability",
+    latencyVal: "<50ms",
+    latencyLabel: "Cart update & search response",
+    deliverables: [
+      "Multi-category product catalog with fresh produce, organic dairy, farm eggs, and artisanal bakery items.",
+      "Client-side reactive shopping cart with live subtotal computations and free delivery threshold indicators.",
+      "Limited-edition Daily Harvest flash deals and dynamic markdown percentage badge engine.",
+      "Verified organic certification provenance tags and direct farmer price transparency."
+    ],
+    archSpec: "Modern React architecture with reactive state management and instantaneous search filtering.",
+    dataSpec: "Client-side catalog caching layer with persistent session cart state.",
+    deploySpec: "Hosted on Vercel Edge network with sub-50ms asset delivery and 100% lighthouse mobile score.",
+    techStack: ["React", "Tailwind CSS", "Vite", "Vercel CDN", "Client Cart Engine"]
   }
 };

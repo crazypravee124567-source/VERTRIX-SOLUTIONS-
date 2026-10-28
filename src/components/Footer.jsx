@@ -1,14 +1,17 @@
 /* Designed & developed by Vertrix Solutions */
 import React from 'react';
 
-export default function Footer() {
+const CURRENT_YEAR = new Date().getFullYear();
+
+export default function Footer({ onNavigate }) {
   const navLinks = [
-    { label: 'Home', href: '#' },
-    { label: 'Services', href: '#services' },
-    { label: 'Case studies', href: '#work' },
-    { label: 'Pricing', href: '#pricing' },
-    { label: 'Process', href: '#process' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: '#home', id: 'home' },
+    { label: 'Demo projects (2 Live)', href: '#demos', id: 'demos', isDemos: true },
+    { label: 'Services', href: '#services', id: 'services' },
+    { label: 'Case studies', href: '#work', id: 'work' },
+    { label: 'Pricing', href: '#pricing', id: 'pricing' },
+    { label: 'Process', href: '#process', id: 'process' },
+    { label: 'Contact', href: '#contact', id: 'contact' },
   ];
 
   return (
@@ -46,7 +49,18 @@ export default function Footer() {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="font-body text-xs text-text-secondary hover:text-accent transition-colors duration-150 py-0.5"
+                  onClick={(e) => {
+                    if (onNavigate) {
+                      e.preventDefault();
+                      if (link.isDemos) {
+                        onNavigate('demos');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      } else {
+                        onNavigate('home', link.id);
+                      }
+                    }
+                  }}
+                  className="font-body text-xs text-text-secondary hover:text-accent transition-colors duration-150 py-0.5 cursor-pointer"
                 >
                   {link.label}
                 </a>
@@ -122,7 +136,7 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-4">
             <span className="text-xs text-text-muted">
-              © {new Date().getFullYear()} Vertrix Solutions. All rights reserved.
+              © {CURRENT_YEAR} Vertrix Solutions. All rights reserved.
             </span>
           </div>
         </div>
