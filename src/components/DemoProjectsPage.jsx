@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { demoProjects } from '../data/demoProjects';
 import LiveDemoPreviewModal from './LiveDemoPreviewModal';
 
-export default function DemoProjectsPage({ onBackToHome, onOpenCaseModal }) {
+export default function DemoProjectsPage({ onBackToHome }) {
   const [activeCategory, setActiveCategory] = useState('All');
   const [previewProject, setPreviewProject] = useState(null);
 
