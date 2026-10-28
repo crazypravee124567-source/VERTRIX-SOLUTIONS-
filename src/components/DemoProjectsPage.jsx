@@ -342,14 +342,6 @@ export default function DemoProjectsPage({ onBackToHome }) {
                         <span className="material-symbols-outlined text-[16px]">devices</span>
                         <span>Interactive preview</span>
                       </button>
-
-                      <button
-                        onClick={() => onOpenCaseModal(project.caseKey)}
-                        className="h-12 px-4 rounded-lg bg-transparent hover:bg-surface-elevated text-text-secondary hover:text-accent text-xs font-medium transition-colors inline-flex items-center justify-center gap-1.5 cursor-pointer ml-auto"
-                      >
-                        <span className="material-symbols-outlined text-[16px]">schema</span>
-                        <span>View blueprint</span>
-                      </button>
                     </div>
 
                   </div>
