@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 576" role="img" aria-labelledby="title description">
+  <title id="title">JNC Textiles preview</title>
+  <desc id="description">A preview illustration for the JNC Textiles manufacturing website.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8f6f1"/>
+      <stop offset="1" stop-color="#e7e0d4"/>
+    </linearGradient>
+    <linearGradient id="copper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a56a45"/>
+      <stop offset="1" stop-color="#70432f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="576" fill="url(#background)"/>
+  <path d="M0 448C176 370 272 468 432 414s290-156 592-72v234H0Z" fill="#d8caba"/>
+  <path d="M0 486c170-76 269-17 414-74 194-77 328-165 610-70v234H0Z" fill="#c6b29f" opacity=".65"/>
+  <g fill="none" stroke="#8e5c40" stroke-width="2" opacity=".32">
+    <path d="M0 122h1024M0 144h1024M0 166h1024M0 188h1024"/>
+    <path d="M80 0v576M124 0v576M168 0v576M212 0v576"/>
+  </g>
+  <rect x="64" y="58" width="896" height="460" rx="18" fill="#fffdf9" opacity=".72"/>
+  <rect x="96" y="92" width="10" height="118" rx="5" fill="url(#copper)"/>
+  <text x="132" y="116" fill="#3b3028" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="4">JNC TEXTILES</text>
+  <text x="96" y="282" fill="#302721" font-family="Georgia, serif" font-size="58" font-weight="700">Precision in every</text>
+  <text x="96" y="348" fill="#302721" font-family="Georgia, serif" font-size="58" font-weight="700">single thread.</text>
+  <text x="100" y="390" fill="#6d5b4e" font-family="Arial, sans-serif" font-size="17">Coimbatore mills • precision ring spinning</text>
+  <circle cx="790" cy="292" r="118" fill="none" stroke="#a56a45" stroke-width="3" opacity=".8"/>
+  <circle cx="790" cy="292" r="86" fill="none" stroke="#a56a45" stroke-width="2" opacity=".6"/>
+  <circle cx="790" cy="292" r="54" fill="none" stroke="#a56a45" stroke-width="2" opacity=".5"/>
+  <path d="M690 292h200M790 192v200" stroke="#a56a45" stroke-width="2" opacity=".45"/>
+  <circle cx="790" cy="292" r="10" fill="url(#copper)"/>
+</svg>

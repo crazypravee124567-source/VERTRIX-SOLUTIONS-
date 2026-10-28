@@ -9,7 +9,8 @@ export default function DemoProjectsPage({ onBackToHome }) {
   const categories = [
     { id: 'All', label: 'All projects', count: demoProjects.length },
     { id: 'Restaurant & Hospitality', label: 'Restaurant & hospitality', count: 1 },
-    { id: 'E-Commerce & Retail', label: 'E-commerce & retail', count: 1 }
+    { id: 'E-Commerce & Retail', label: 'E-commerce & retail', count: 1 },
+    { id: 'Textiles & Manufacturing', label: 'Textiles & manufacturing', count: 1 }
   ];
 
   const filteredProjects = activeCategory === 'All'
@@ -74,7 +75,7 @@ export default function DemoProjectsPage({ onBackToHome }) {
           <div className="w-full max-w-3xl grid grid-cols-2 sm:grid-cols-4 gap-3 p-4 rounded-2xl bg-canvas border border-border-ui text-left">
             <div className="p-3 rounded-xl bg-surface border border-border-ui">
               <span className="text-[11px] text-text-muted font-medium block">Live demos</span>
-              <span className="font-mono text-xl font-bold text-accent">2 Projects</span>
+              <span className="font-mono text-xl font-bold text-accent">{demoProjects.length} Projects</span>
               <span className="text-[11px] text-text-secondary block mt-0.5">Vercel hosted</span>
             </div>
             <div className="p-3 rounded-xl bg-surface border border-border-ui">

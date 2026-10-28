@@ -64,5 +64,36 @@ export const demoProjects = [
       'Farm-certified assurance badges and fair direct-grower pricing transparency'
     ],
     techStack: ['React', 'Tailwind CSS', 'Vite', 'Vercel CDN', 'Client Cart Engine']
+  },
+  {
+    id: 'jnc-textiles',
+    title: 'JNC Textiles',
+    subtitle: 'Precision Ring Spinning Manufacturing Platform',
+    category: 'Textiles & Manufacturing',
+    sector: 'Textile Manufacturing',
+    location: 'Coimbatore, Tamil Nadu',
+    demoUrl: 'https://jnc-textiles.vercel.app',
+    domain: 'jnc-textiles.vercel.app',
+    image: '/demos/jnc-textiles-preview.svg',
+    orientation: 'landscape',
+    deviceType: 'Desktop Web Application',
+    defaultDeviceMode: 'desktop',
+    imageWidth: 1024,
+    imageHeight: 576,
+    aspectRatio: '16 / 9',
+    tagline: 'Precision Textile Manufacturing, Quality & Sustainability Showcase',
+    description: 'A refined corporate web experience for JNC Textiles, presenting its precision ring spinning capabilities, manufacturing heritage, quality standards, and sustainable production practices.',
+    metrics: [
+      { label: 'Manufacturing Focus', value: 'Ring Spinning' },
+      { label: 'Industry', value: 'Textiles' },
+      { label: 'Location', value: 'Coimbatore' },
+      { label: 'Deployment', value: 'Vercel Edge' }
+    ],
+    highlights: [
+      'Clear presentation of precision ring spinning and textile manufacturing capabilities',
+      'Corporate storytelling focused on quality, heritage, and long-term customer partnerships',
+      'Responsive experience for buyers, partners, and textile industry stakeholders'
+    ],
+    techStack: ['React', 'Tailwind CSS', 'Vite', 'Vercel Edge', 'Responsive UI']
   }
 ];
