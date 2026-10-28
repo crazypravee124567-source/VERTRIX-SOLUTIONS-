@@ -1,27 +1,23 @@
 import React, { useState, useEffect } from 'react';
 
-export default function Navbar({ currentPage = 'home', onNavigate }) {
+export default function Navbar({ onNavigate }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('home');
   const [isScrolled, setIsScrolled] = useState(false);
 
   const navLinks = [
     { id: 'home', label: 'Home', href: '#home' },
-    { id: 'demos', label: 'Demo projects', href: '#demos', isPage: true, badge: '2 Live' },
     { id: 'services', label: 'Services', href: '#services' },
-    { id: 'work', label: 'Case studies', href: '#work' },
+    { id: 'work', label: 'Projects', href: '#work' },
     { id: 'pricing', label: 'Pricing', href: '#pricing' },
     { id: 'process', label: 'Process', href: '#process' },
     { id: 'contact', label: 'Contact', href: '#contact' },
   ];
 
-  const effectiveActiveTab = currentPage === 'demos' ? 'demos' : activeTab;
+  const effectiveActiveTab = activeTab;
 
-  // Dynamic Scrollspy & scroll elevation for Home page
+  // Dynamic Scrollspy & scroll elevation
   useEffect(() => {
-    if (currentPage !== 'home') {
-      return;
-    }
 
     let ticking = false;
 
@@ -46,7 +42,7 @@ export default function Navbar({ currentPage = 'home', onNavigate }) {
           // Edge case 2: Near top always activates home
           if (scrollY < 100) {
             setActiveTab('home');
-            if (window.location.hash && window.location.hash !== '#' && window.location.hash !== '#home' && window.location.hash !== '#demos') {
+            if (window.location.hash && window.location.hash !== '#' && window.location.hash !== '#home') {
               window.history.replaceState(null, '', window.location.pathname + window.location.search);
             }
             ticking = false;
@@ -84,31 +80,11 @@ export default function Navbar({ currentPage = 'home', onNavigate }) {
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [currentPage]);
+  }, []);
 
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
     setMobileMenuOpen(false);
-
-    if (targetId === 'demos') {
-      setActiveTab('demos');
-      if (onNavigate) {
-        onNavigate('demos');
-      } else {
-        window.location.hash = '#demos';
-      }
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      return;
-    }
-
-    if (currentPage !== 'home') {
-      if (onNavigate) {
-        onNavigate('home', targetId);
-      } else {
-        window.location.hash = targetId === 'home' ? '' : `#${targetId}`;
-      }
-      return;
-    }
 
     setActiveTab(targetId);
 

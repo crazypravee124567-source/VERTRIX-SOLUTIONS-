@@ -6,9 +6,8 @@ const CURRENT_YEAR = new Date().getFullYear();
 export default function Footer({ onNavigate }) {
   const navLinks = [
     { label: 'Home', href: '#home', id: 'home' },
-    { label: 'Demo projects (2 Live)', href: '#demos', id: 'demos', isDemos: true },
     { label: 'Services', href: '#services', id: 'services' },
-    { label: 'Case studies', href: '#work', id: 'work' },
+    { label: 'Projects', href: '#work', id: 'work' },
     { label: 'Pricing', href: '#pricing', id: 'pricing' },
     { label: 'Process', href: '#process', id: 'process' },
     { label: 'Contact', href: '#contact', id: 'contact' },
@@ -52,12 +51,7 @@ export default function Footer({ onNavigate }) {
                   onClick={(e) => {
                     if (onNavigate) {
                       e.preventDefault();
-                      if (link.isDemos) {
-                        onNavigate('demos');
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                      } else {
-                        onNavigate('home', link.id);
-                      }
+                      onNavigate(link.id);
                     }
                   }}
                   className="font-body text-xs text-text-secondary hover:text-accent transition-colors duration-150 py-0.5 cursor-pointer"

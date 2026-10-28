@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Hero({ onExploreDemos }) {
+export default function Hero() {
   const techStack = ['Next.js 14', 'Flutter', 'React', 'Node.js', 'PostgreSQL', 'Tailwind'];
 
   return (
@@ -49,24 +49,13 @@ export default function Hero({ onExploreDemos }) {
                 <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
               </a>
 
-              {onExploreDemos ? (
-                <button
-                  onClick={onExploreDemos}
-                  className="w-full sm:w-auto h-12 px-5 rounded-xl bg-surface-elevated hover:bg-canvas border border-border-ui hover:border-accent text-text-primary text-xs font-semibold transition-colors inline-flex items-center justify-center gap-2 cursor-pointer"
-                >
-                  <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
-                  <span>Explore live demos (2)</span>
-                  <span className="material-symbols-outlined text-[16px]">devices</span>
-                </button>
-              ) : (
-                <a
-                  className="text-sm font-medium text-text-primary hover:text-accent transition-colors inline-flex items-center gap-2 py-2"
-                  href="#work"
-                >
-                  <span>View case studies</span>
-                  <span className="material-symbols-outlined text-[18px]">arrow_downward</span>
-                </a>
-              )}
+              <a
+                className="text-sm font-medium text-text-primary hover:text-accent transition-colors inline-flex items-center gap-2 py-2"
+                href="#work"
+              >
+                <span>View projects</span>
+                <span className="material-symbols-outlined text-[18px]">arrow_downward</span>
+              </a>
             </div>
 
             {/* Trust Metrics / Social Proof */}

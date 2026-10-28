@@ -30,8 +30,7 @@ export const demoProjects = [
       'Direct one-click WhatsApp order confirmation and telephone assistance integration',
       'High-contrast atmospheric dark culinary design with seamless mobile touch response'
     ],
-    techStack: ['React', 'Tailwind CSS', 'Vite', 'Vercel Edge', 'Responsive UI'],
-    caseKey: 'spiceroute'
+    techStack: ['React', 'Tailwind CSS', 'Vite', 'Vercel Edge', 'Responsive UI']
   },
   {
     id: 'freshnest',
@@ -64,7 +63,6 @@ export const demoProjects = [
       'Limited-time Daily Harvest flash deal banners with live discount badges',
       'Farm-certified assurance badges and fair direct-grower pricing transparency'
     ],
-    techStack: ['React', 'Tailwind CSS', 'Vite', 'Vercel CDN', 'Client Cart Engine'],
-    caseKey: 'freshnest'
+    techStack: ['React', 'Tailwind CSS', 'Vite', 'Vercel CDN', 'Client Cart Engine']
   }
 ];

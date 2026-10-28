@@ -52,7 +52,7 @@ export default function DemoProjectsPage({ onBackToHome }) {
       </div>
 
       {/* Hero Section */}
-      <section className="w-full py-16 md:py-20 border-b border-border-ui bg-surface">
+      <section className="w-full py-14 md:py-18 border-b border-border-ui bg-surface">
         <div className="max-w-[1200px] mx-auto px-6 text-center flex flex-col items-center">
           
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-elevated border border-border-ui mb-4">
@@ -97,12 +97,12 @@ export default function DemoProjectsPage({ onBackToHome }) {
         </div>
       </section>
 
-      {/* Category Tabs & Project Showcase */}
+      {/* Category Tabs & Project Showcase Grid */}
       <section className="w-full py-12 md:py-16">
         <div className="max-w-[1200px] mx-auto px-6">
           
           {/* Filter Bar */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pb-8 border-b border-border-ui mb-10">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pb-6 border-b border-border-ui mb-8">
             <div className="flex flex-wrap items-center gap-2">
               {categories.map((cat) => (
                 <button
@@ -133,217 +133,132 @@ export default function DemoProjectsPage({ onBackToHome }) {
             </p>
           </div>
 
-          {/* Project Showcase List (Rich Vertical Cards) */}
-          <div className="flex flex-col gap-12">
-            {filteredProjects.map((project, index) => (
+          {/* Clean 2-Column Responsive Card Grid (Image on top, details underneath) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            {filteredProjects.map((project) => (
               <div
                 key={project.id}
-                className="rounded-2xl bg-surface border border-border-ui overflow-hidden shadow-sm hover:border-accent/40 transition-all duration-200"
+                className="rounded-2xl bg-surface border border-border-ui overflow-hidden shadow-sm hover:border-accent/40 transition-all duration-200 flex flex-col justify-between group"
               >
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
-                  
-                  {/* Left Column: Visual Preview adjusted to photo width and aspect ratio */}
-                  <div
-                    className={`${
-                      project.orientation === 'landscape' ? 'lg:col-span-6' : 'lg:col-span-5'
-                    } bg-canvas p-6 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-border-ui relative group`}
-                  >
-                    {project.orientation === 'portrait' ? (
-                      /* Smartphone Mockup Frame for Portrait Photo (FreshNest 670x899) */
-                      <div className="w-full max-w-[310px] sm:max-w-[330px] mx-auto rounded-[26px] overflow-hidden border-[2px] border-border-ui bg-background shadow-md">
-                        {/* Phone Top Status Bar */}
-                        <div className="h-7 px-4 bg-surface border-b border-border-ui flex items-center justify-between text-[10px] text-text-muted select-none">
-                          <span className="font-semibold text-text-primary text-[10px]">9:41</span>
-                          <div className="w-12 h-3 bg-canvas border border-border-ui rounded-full flex items-center justify-center">
-                            <span className="w-1.5 h-1.5 rounded-full bg-border-ui" />
-                          </div>
-                          <div className="flex items-center gap-1 text-[11px]">
-                            <span className="material-symbols-outlined text-[13px]">wifi</span>
-                            <span className="material-symbols-outlined text-[13px]">battery_full</span>
-                          </div>
-                        </div>
+                {/* 1. Compact Project Preview Image (Fixed 16:9 Aspect Ratio at the Top) */}
+                <div className="relative w-full aspect-[16/9] overflow-hidden bg-canvas border-b border-border-ui">
+                  <img
+                    src={project.image}
+                    alt={`${project.title} Preview`}
+                    className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-102"
+                    loading="lazy"
+                  />
 
-                        {/* Image Preview with exact 670/899 aspect ratio */}
-                        <div className="relative aspect-[670/899] w-full overflow-hidden bg-surface-elevated">
-                          <img
-                            src={project.image}
-                            alt={`${project.title} Mobile Preview`}
-                            className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-102"
-                            loading="lazy"
-                          />
-                          <div className="absolute inset-0 bg-text-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2">
-                            <button
-                              onClick={() => setPreviewProject(project)}
-                              className="h-10 px-4 rounded-lg bg-surface text-text-primary text-xs font-semibold shadow-lg hover:bg-surface-elevated transition-colors flex items-center gap-1.5 cursor-pointer"
-                            >
-                              <span className="material-symbols-outlined text-[16px]">visibility</span>
-                              <span>Interactive preview</span>
-                            </button>
-                          </div>
-                        </div>
+                  {/* Top Live Domain Tag */}
+                  <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-surface/95 backdrop-blur-xs border border-border-ui text-[11px] font-mono text-text-secondary shadow-xs flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-success animate-pulse" />
+                    <span>{project.domain}</span>
+                  </div>
 
-                        {/* Phone Bottom Home Indicator */}
-                        <div className="h-4 bg-surface flex items-center justify-center border-t border-border-ui/60">
-                          <div className="w-20 h-1 bg-border-ui rounded-full" />
-                        </div>
-                      </div>
-                    ) : (
-                      /* Desktop Browser Mockup Frame for Landscape Photo (Spice Route 1024x485) */
-                      <div className="w-full rounded-xl overflow-hidden border border-border-ui bg-background shadow-xs">
-                        {/* Browser Mockup Top Bar */}
-                        <div className="h-7 px-3 bg-surface border-b border-border-ui flex items-center justify-between text-[11px] text-text-muted select-none">
-                          <div className="flex items-center gap-1.5">
-                            <span className="w-2 h-2 rounded-full bg-[#EF4444]" />
-                            <span className="w-2 h-2 rounded-full bg-[#F59E0B]" />
-                            <span className="w-2 h-2 rounded-full bg-[#10B981]" />
-                          </div>
-                          <span className="font-mono text-[10px] text-text-secondary truncate max-w-[200px]">
-                            {project.domain}
-                          </span>
-                          <span className="text-[10px] text-accent font-mono font-medium hidden sm:inline">
-                            Desktop Web
-                          </span>
-                        </div>
+                  {/* Interactive Preview Overlay on Hover */}
+                  <div className="absolute inset-0 bg-text-primary/35 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
+                    <button
+                      onClick={() => setPreviewProject(project)}
+                      className="h-10 px-4 rounded-lg bg-surface text-text-primary text-xs font-semibold shadow-md hover:bg-surface-elevated transition-colors flex items-center gap-1.5 cursor-pointer"
+                    >
+                      <span className="material-symbols-outlined text-[16px]">visibility</span>
+                      <span>Quick preview</span>
+                    </button>
+                  </div>
+                </div>
 
-                        {/* Image Preview with exact 1024/485 aspect ratio */}
-                        <div className="relative aspect-[1024/485] w-full overflow-hidden bg-surface-elevated">
-                          <img
-                            src={project.image}
-                            alt={`${project.title} Desktop Preview`}
-                            className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-102"
-                            loading="lazy"
-                          />
-                          <div className="absolute inset-0 bg-text-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2">
-                            <button
-                              onClick={() => setPreviewProject(project)}
-                              className="h-10 px-4 rounded-lg bg-surface text-text-primary text-xs font-semibold shadow-lg hover:bg-surface-elevated transition-colors flex items-center gap-1.5 cursor-pointer"
-                            >
-                              <span className="material-symbols-outlined text-[16px]">visibility</span>
-                              <span>Interactive preview</span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Operational Location & Status */}
-                    <div className="mt-4 pt-4 border-t border-border-ui/80 flex items-center justify-between text-xs">
-                      <div className="flex items-center gap-1.5 text-text-secondary">
-                        <span className="material-symbols-outlined text-accent text-[15px]">location_on</span>
-                        <span>{project.location}</span>
-                      </div>
-                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface border border-border-ui text-success font-medium text-[11px]">
-                        <span className="w-1.5 h-1.5 rounded-full bg-success animate-pulse" />
-                        Vercel live
+                {/* 2. Project Details (Underneath Image) */}
+                <div className="p-6 sm:p-7 flex flex-col flex-1 justify-between">
+                  <div>
+                    {/* Category & Demo Status Row */}
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <span className="px-2.5 py-1 rounded-md bg-surface-elevated text-xs font-semibold text-accent border border-border-ui">
+                        {project.category}
                       </span>
+                      <span className="inline-flex items-center gap-1.5 text-xs text-success font-medium">
+                        <span className="w-1.5 h-1.5 rounded-full bg-success animate-pulse" />
+                        Live on Vercel
+                      </span>
+                    </div>
+
+                    {/* Project Title */}
+                    <h2 className="font-headline text-xl sm:text-2xl font-bold text-text-primary tracking-tight mb-1 group-hover:text-accent transition-colors">
+                      {project.title}
+                    </h2>
+                    <p className="text-xs text-text-muted font-medium mb-3">
+                      {project.tagline}
+                    </p>
+
+                    {/* Short Description */}
+                    <p className="font-body text-sm text-text-secondary leading-relaxed line-clamp-3 mb-5">
+                      {project.description}
+                    </p>
+
+                    {/* Key Features */}
+                    <div className="mb-5">
+                      <span className="text-[11px] font-semibold text-text-primary block mb-2">
+                        Key capabilities:
+                      </span>
+                      <ul className="space-y-1.5 font-body text-xs text-text-secondary">
+                        {project.highlights.slice(0, 3).map((item, hIdx) => (
+                          <li key={hIdx} className="flex items-start gap-2">
+                            <span className="material-symbols-outlined text-accent text-[15px] shrink-0 mt-0.5">
+                              check_circle
+                            </span>
+                            <span className="line-clamp-1">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Technology Badges */}
+                    <div className="flex flex-wrap gap-1.5 mb-5">
+                      {project.techStack.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2 py-0.5 rounded bg-canvas font-mono text-[11px] text-text-secondary border border-border-ui"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Compact Verified Metrics Strip */}
+                    <div className="grid grid-cols-2 gap-2 p-3 rounded-xl bg-canvas border border-border-ui mb-5">
+                      {project.metrics.slice(0, 2).map((m, mIdx) => (
+                        <div key={mIdx}>
+                          <span className="text-[10px] text-text-muted block font-medium">
+                            {m.label}
+                          </span>
+                          <span className="font-mono text-sm font-bold text-text-primary block mt-0.5">
+                            {m.value}
+                          </span>
+                        </div>
+                      ))}
                     </div>
                   </div>
 
-                  {/* Right Column: Full Specifications & Actions */}
-                  <div
-                    className={`${
-                      project.orientation === 'landscape' ? 'lg:col-span-6' : 'lg:col-span-7'
-                    } p-6 sm:p-8 flex flex-col justify-between`}
-                  >
-                    <div>
-                      {/* Category & Badge */}
-                      <div className="flex items-center justify-between gap-2 mb-3">
-                        <div className="flex items-center gap-2 flex-wrap">
-                          <span className="px-3 py-1 rounded bg-surface-elevated text-xs font-medium text-accent border border-border-ui">
-                            {project.category}
-                          </span>
-                          <span className="px-2.5 py-1 rounded bg-canvas text-xs font-mono text-text-secondary border border-border-ui">
-                            {project.deviceType}
-                          </span>
-                        </div>
-                        <span className="font-mono text-xs text-text-muted">
-                          Demo #{index + 1}
-                        </span>
-                      </div>
+                  {/* Clear Action Buttons: Live Demo and View Project */}
+                  <div className="pt-5 border-t border-border-ui grid grid-cols-2 gap-3 mt-auto">
+                    {/* Primary Button: Live Demo */}
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="h-11 px-4 rounded-lg bg-accent text-accent-text font-headline text-xs font-bold hover:bg-accent-hover transition-colors inline-flex items-center justify-center gap-1.5 shadow-sm"
+                    >
+                      <span>Live Demo</span>
+                      <span className="material-symbols-outlined text-[15px]">open_in_new</span>
+                    </a>
 
-                      {/* Title & Tagline */}
-                      <h2 className="font-headline text-2xl font-bold text-text-primary mb-1">
-                        {project.title}
-                      </h2>
-                      <p className="text-xs text-text-secondary font-medium mb-4">
-                        {project.tagline}
-                      </p>
-
-                      {/* Description */}
-                      <p className="font-body text-sm text-text-secondary leading-relaxed mb-6">
-                        {project.description}
-                      </p>
-
-                      {/* Metric Telemetry Row */}
-                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 p-3.5 rounded-xl bg-canvas border border-border-ui mb-6">
-                        {project.metrics.map((m, mIdx) => (
-                          <div key={mIdx} className="p-2 rounded-lg bg-surface border border-border-ui">
-                            <span className="text-[10px] text-text-muted block font-medium">
-                              {m.label}
-                            </span>
-                            <span className="font-mono text-sm sm:text-base font-bold text-text-primary block mt-0.5">
-                              {m.value}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Core Highlights */}
-                      <div className="mb-6">
-                        <h4 className="text-xs font-semibold text-text-primary mb-2.5 flex items-center gap-1.5">
-                          <span className="material-symbols-outlined text-accent text-[16px]">check_circle</span>
-                          Key application capabilities
-                        </h4>
-                        <ul className="grid grid-cols-1 gap-2 font-body text-xs text-text-secondary">
-                          {project.highlights.map((item, hIdx) => (
-                            <li key={hIdx} className="flex items-start gap-2">
-                              <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0" />
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Technology Stack Pills */}
-                      <div className="mb-6">
-                        <span className="text-[11px] text-text-muted font-medium block mb-2">
-                          Engineering stack:
-                        </span>
-                        <div className="flex flex-wrap gap-1.5">
-                          {project.techStack.map((tech) => (
-                            <span
-                              key={tech}
-                              className="px-2.5 py-1 rounded bg-canvas font-mono text-xs text-text-secondary border border-border-ui"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Action Buttons Row */}
-                    <div className="pt-6 border-t border-border-ui flex flex-wrap items-center gap-3">
-                      {/* Exactly ONE filled accent button per card */}
-                      <a
-                        href={project.demoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="h-12 px-6 rounded-lg bg-accent text-accent-text font-headline text-xs font-bold hover:bg-accent-hover transition-colors inline-flex items-center justify-center gap-2 shadow-sm"
-                      >
-                        <span>Open live website</span>
-                        <span className="material-symbols-outlined text-[16px]">arrow_outward</span>
-                      </a>
-
-                      <button
-                        onClick={() => setPreviewProject(project)}
-                        className="h-12 px-5 rounded-lg bg-surface-elevated hover:bg-canvas border border-border-ui hover:border-accent text-text-primary text-xs font-semibold transition-colors inline-flex items-center justify-center gap-2 cursor-pointer"
-                      >
-                        <span className="material-symbols-outlined text-[16px]">devices</span>
-                        <span>Interactive preview</span>
-                      </button>
-                    </div>
-
+                    {/* Secondary Button: View Project */}
+                    <button
+                      onClick={() => setPreviewProject(project)}
+                      className="h-11 px-4 rounded-lg bg-surface-elevated hover:bg-canvas border border-border-ui hover:border-accent text-text-primary text-xs font-semibold transition-colors inline-flex items-center justify-center gap-1.5 cursor-pointer"
+                    >
+                      <span className="material-symbols-outlined text-[15px]">devices</span>
+                      <span>View Project</span>
+                    </button>
                   </div>
 
                 </div>
