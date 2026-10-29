@@ -33,6 +33,39 @@ export const demoProjects = [
     techStack: ['React', 'Tailwind CSS', 'Vite', 'Vercel Edge', 'Responsive UI']
   },
   {
+    id: 'skp-resturants',
+    title: 'SKP RESTURANTS',
+    subtitle: 'South Indian & Regional Restaurant Platform',
+    category: 'Restaurant & Hospitality',
+    sector: 'Food & Hospitality',
+    location: 'Karumathampatti, Coimbatore',
+    demoUrl: 'https://demo-omega-red-42.vercel.app/',
+    domain: 'demo-omega-red-42.vercel.app',
+    image: '/demos/skp-resturants-preview.svg',
+    orientation: 'landscape',
+    deviceType: 'Responsive Restaurant Website',
+    defaultDeviceMode: 'desktop',
+    imageWidth: 1024,
+    imageHeight: 576,
+    aspectRatio: '16 / 9',
+    tagline: 'South Indian Regional Specialties, Dining & Table Reservations',
+    description: 'A warm restaurant website for SKP RESTURANTS in Karumathampatti, Coimbatore, showcasing Tamil Nadu, Andhra, Karnataka, Kerala, and Hyderabadi cuisine alongside dine-in, takeaway, delivery, and reservation services.',
+    metrics: [
+      { label: 'Cuisine Regions', value: '5' },
+      { label: 'Daily Service', value: 'Lunch & Dinner' },
+      { label: 'Table for Two', value: '₹1,000–₹1,200' },
+      { label: 'Contact', value: '+91 98947 66146' }
+    ],
+    highlights: [
+      'Regional cuisine showcase spanning Tamil Nadu, Andhra, Karnataka, Kerala, and Hyderabadi specialties',
+      'Signature dish highlights including chicken biryani, coin parotta, bun parotta, and regional meals',
+      'Table reservation form that sends booking requests through WhatsApp',
+      'Opening-hours panel with lunch from 12:00 PM–3:30 PM and dinner from 7:00 PM–10:30 PM',
+      'Location, phone contact, Google Maps directions, and dine-in, takeaway, delivery, and curbside service details'
+    ],
+    techStack: ['HTML', 'CSS', 'JavaScript', 'WhatsApp Integration', 'Vercel']
+  },
+  {
     id: 'freshnest',
     title: 'FreshNest Market',
     subtitle: 'Organic & Farm-Fresh E-Commerce Platform',

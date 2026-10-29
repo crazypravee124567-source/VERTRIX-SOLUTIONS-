@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 576" role="img" aria-labelledby="title description">
+  <title id="title">SKP RESTURANTS preview</title>
+  <desc id="description">Warm restaurant website preview with regional South Indian cuisine and reservation call to action.</desc>
+  <rect width="1024" height="576" fill="#24150f"/>
+  <rect x="28" y="24" width="968" height="528" rx="18" fill="#f7efe3"/>
+  <rect x="28" y="24" width="968" height="70" rx="18" fill="#3b2116"/>
+  <text x="66" y="68" fill="#f8d59b" font-family="Georgia, serif" font-size="26" font-weight="700">SKP RESTURANTS</text>
+  <text x="730" y="66" fill="#f7efe3" font-family="Arial, sans-serif" font-size="14">ABOUT   FAVOURITES   MENU   VISIT</text>
+  <rect x="66" y="132" width="520" height="300" rx="14" fill="#8d4226"/>
+  <circle cx="450" cy="210" r="118" fill="#b85c32" opacity=".8"/>
+  <circle cx="450" cy="210" r="76" fill="#e1a04d" opacity=".8"/>
+  <text x="96" y="190" fill="#fff5e8" font-family="Georgia, serif" font-size="42" font-weight="700">South Indian</text>
+  <text x="96" y="238" fill="#fff5e8" font-family="Georgia, serif" font-size="42" font-weight="700">regional flavours</text>
+  <text x="96" y="282" fill="#f8d59b" font-family="Arial, sans-serif" font-size="18">Tamil Nadu · Andhra · Karnataka</text>
+  <text x="96" y="310" fill="#f8d59b" font-family="Arial, sans-serif" font-size="18">Kerala · Hyderabadi</text>
+  <rect x="96" y="348" width="172" height="44" rx="7" fill="#f0b35d"/>
+  <text x="120" y="376" fill="#3b2116" font-family="Arial, sans-serif" font-size="15" font-weight="700">RESERVE A TABLE</text>
+  <rect x="620" y="132" width="330" height="300" rx="14" fill="#fffaf2"/>
+  <text x="654" y="180" fill="#3b2116" font-family="Georgia, serif" font-size="28" font-weight="700">A table for</text>
+  <text x="654" y="216" fill="#3b2116" font-family="Georgia, serif" font-size="28" font-weight="700">the whole family</text>
+  <text x="654" y="260" fill="#765548" font-family="Arial, sans-serif" font-size="16">Open every day</text>
+  <line x1="654" y1="282" x2="916" y2="282" stroke="#e4cdb0"/>
+  <text x="654" y="316" fill="#765548" font-family="Arial, sans-serif" font-size="15">Lunch      12:00 PM – 3:30 PM</text>
+  <text x="654" y="348" fill="#765548" font-family="Arial, sans-serif" font-size="15">Dinner      7:00 PM – 10:30 PM</text>
+  <text x="654" y="396" fill="#9a4c2b" font-family="Arial, sans-serif" font-size="14" font-weight="700">KARUMATHAMPATTI, COIMBATORE</text>
+  <text x="66" y="492" fill="#3b2116" font-family="Georgia, serif" font-size="23" font-weight="700">What people order here</text>
+  <text x="66" y="524" fill="#765548" font-family="Arial, sans-serif" font-size="16">Chicken Biryani  ·  Coin Parotta  ·  Bun Parotta  ·  Regional Meals</text>
+</svg>

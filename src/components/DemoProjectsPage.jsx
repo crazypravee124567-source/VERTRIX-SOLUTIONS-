@@ -8,9 +8,14 @@ export default function DemoProjectsPage({ onBackToHome }) {
 
   const categories = [
     { id: 'All', label: 'All projects', count: demoProjects.length },
-    { id: 'Restaurant & Hospitality', label: 'Restaurant & hospitality', count: 1 },
-    { id: 'E-Commerce & Retail', label: 'E-commerce & retail', count: 1 },
-    { id: 'Textiles & Manufacturing', label: 'Textiles & manufacturing', count: 1 }
+    ...[
+      { id: 'Restaurant & Hospitality', label: 'Restaurant & hospitality' },
+      { id: 'E-Commerce & Retail', label: 'E-commerce & retail' },
+      { id: 'Textiles & Manufacturing', label: 'Textiles & manufacturing' }
+    ].map((category) => ({
+      ...category,
+      count: demoProjects.filter((project) => project.category === category.id).length
+    }))
   ];
 
   const filteredProjects = activeCategory === 'All'
