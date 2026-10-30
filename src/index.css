@@ -1,5 +1,41 @@
 @import "tailwindcss";
 
+/* ============================================================
+   Vertrix Solutions — Design Token Theme (Tailwind v4 @theme)
+   Royal Blue & Grey Light — 60/30/10 System
+   ============================================================ */
+@theme {
+  /* 60% — Main canvas backgrounds */
+  --color-background: #FFFFFF;
+  --color-canvas: #F3F4F6;
+
+  /* 30% — Card surfaces & structure */
+  --color-surface: #FFFFFF;
+  --color-surface-elevated: #F3F4F6;
+  --color-surface-subtle: #F9FAFB;
+  --color-border-ui: #E5E7EB;
+  --color-border-accent: #2563EB;
+
+  /* Text hierarchy */
+  --color-text-primary: #111827;
+  --color-text-secondary: #6B7280;
+  --color-text-muted: #9CA3AF;
+
+  /* 10% — Royal Blue accent */
+  --color-accent: #2563EB;
+  --color-accent-hover: #1D4ED8;
+  --color-accent-text: #FFFFFF;
+
+  /* Semantic feedback */
+  --color-success: #10B981;
+  --color-error: #EF4444;
+
+  /* Typography */
+  --font-headline: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+}
+
 /* Vertrix Solutions Design System Styles - Royal Blue & Grey Light Theme */
 :root {
   --primary-glow: rgba(37, 99, 235, 0.20);
