@@ -1,3 +1,4 @@
+@import "tailwindcss";
 /* Vertrix Solutions Design System Styles - Royal Blue & Grey Light Theme */
 :root {
   --primary-glow: rgba(37, 99, 235, 0.20);
