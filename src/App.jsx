@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutStrip from './components/AboutStrip';
@@ -12,8 +12,11 @@ import PaymentMilestones from './components/PaymentMilestones';
 import Terms from './components/Terms';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import PrivacyPolicy from './components/PrivacyPolicy';
 
 export default function App() {
+  const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
+
   const handleNavigate = (section) => {
     if (!section || section === 'home') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -54,7 +57,15 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <Footer onNavigate={handleNavigate} />
+      <Footer
+        onNavigate={handleNavigate}
+        onPrivacyPolicy={() => setShowPrivacyPolicy(true)}
+      />
+
+      {/* Privacy Policy Modal */}
+      {showPrivacyPolicy && (
+        <PrivacyPolicy onClose={() => setShowPrivacyPolicy(false)} />
+      )}
     </div>
   );
 }
